@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="display"></h1>
+    <button onclick="caze()">Switch</button>
+    <h1 id="out"></h1>
+    <script>
+        let x = 0;
+        let arr = ['boongas', 'bingus', 'bungus', 'bringus', 'bonkus']
+        const dis = document.getElementById('display')
+        const out = document.getElementById('out')
+        dis.innerHTML = `boongas,bingus,bungus,bringus,bonkus`
+        function caze() {
+            if (x == 0) {
+                out.innerHTML = arr.map(cap)
+                x++
+            } else {
+                out.innerHTML = arr.map(unp)
+                x--
+            }
+        }
+        function cap(string) {
+            console.log(string.toUpperCase())
+            return string.toUpperCase()
+        }
+        function unp(string) {
+            console.log(string.toLowerCase())
+            return string.toLowerCase()
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="board">
+        <h1>Arizona Wheather</h1>
+
+    </div>
+
+    <button onclick="grab()">Random Info</button>
+    <script>
+        const div = document.getElementById('board')
+        let fax = []
+        fax.push('Partly Cloudy')
+        fax.push('20F')
+        fax.push('low winds')
+        fax.push('Not snowing')
+
+        for (i = 0; i < fax.length; i++) {
+            const jah = document.createElement('h2')
+            jah.innerHTML = fax[i]
+            div.appendChild(jah)
+        }
+
+        function grab() {
+            const body = document.body
+            let randy = Math.round(Math.random() * 3)
+            let randina = Math.round(Math.random() * 3 + 1)
+            do{
+            randy = Math.round(Math.random() * 3)
+            randina = Math.round(Math.random() * 3 + 1)
+            }
+            while (!randina > randy || randina == randy || !randy + randina >= 4 || randy-randina == 1);
+            console.log(randy, randina)
+            const jah = document.createElement('h2')
+            let rekka = fax.slice(randy, randina)
+            jah.innerHTML = rekka
+            fax.concat(rekka)
+            body.appendChild(jah)
+        }
+    </script>
+</body>
+
+</html>

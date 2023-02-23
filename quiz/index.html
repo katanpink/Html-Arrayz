@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- displays the stuff -->
+    <div id="board">
+        <!-- the form -->
+        <form id="form">
+            <!-- question one -->
+            <h1>Is this the best quiz?</h1>
+            <input type="radio" id="a1" name="a" value="30">
+            <label for="a1">Yes</label><br>
+            <input type="radio" id="a2" name="a" value="60">
+            <label for="a2">yes</label><br>
+            <input type="radio" id="a3" name="a" value="100">
+            <label for="a3">YES</label><br><br>
+            <!-- question 2 -->
+            <h1>do it?</h1>
+            <input type="radio" id="b1" name="b" value="30">
+            <label for="b1">Awkward Silence</label><br>
+            <input type="radio" id="b2" name="b" value="60">
+            <label for="b2">5 flip reset double tap musty flick clip</label><br>
+            <input type="radio" id="b3" name="b" value="100">
+            <label for="b3">:)</label><br><br>
+            <!-- question 3 -->
+            <h1>What is air?</h1>
+            <input type="radio" id="c1" name="c" value="30">
+            <label for="c1">78%N 21%O 0.9%Ar 0.1%Other</label><br>
+            <input type="radio" id="c2" name="c" value="60">
+            <label for="c2">A I R</label><br>
+            <input type="radio" id="c3" name="c" value="100">
+            <label for="c3">Trick question, don't breathe</label><br><br>
+            <!-- question 4 -->
+            <h1>What is Bulgolgi</h1>
+            <input type="radio" id="d1" name="d" value="30">
+            <label for="d1">Worlds best meat(based)</label><br>
+            <input type="radio" id="d2" name="d" value="60">
+            <label for="d2">Dismey Chammel</label><br>
+            <input type="radio" id="d3" name="d" value="100">
+            <label for="d3">Final Fantasy move</label><br><br>
+            <!-- question 5 -->
+            <h1>futball</h1>
+            <input type="radio" id="e1" name="e" value="30">
+            <label for="e1">Daniel Joeseph</label><br>
+            <input type="radio" id="e2" name="e" value="60">
+            <label for="e2">Messi</label><br>
+            <input type="radio" id="e3" name="e" value="100">
+            <label for="e3">Mbappe</label><br><br>
+            <!-- submit -->
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        function logSubmit(e) {
+            // grabs display and stops reload
+            const div = document.getElementById('board')
+            e.preventDefault();
+
+            //checks if the correct answers were chosen then clears screen
+            let score = 0
+            let q1 = document.getElementById('a2').checked
+            if (q1 == true){score++}
+            let q2 = document.getElementById('b2').checked
+            if (q2 == true){score++}
+            let q3 = document.getElementById('c2').checked
+            if (q3 == true){score++}
+            let q4 = document.getElementById('d1').checked
+            if (q4 == true){score++}
+            let q5 = document.getElementById('e3').checked
+            if (q5 == true){score++}
+            form.innerHTML = ``
+            
+            //score display is created then appended to the div
+            const scds = document.createElement('h1')
+            scds.innerHTML = `You got <br>  ${score}/5!`
+
+            board.appendChild(scds)
+        }
+        // gets the form and waits for submition
+        const form = document.getElementById('form');
+        form.addEventListener('submit', logSubmit);
+    </script>
+</body>
+
+</html>

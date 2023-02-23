@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="mal()">Males</button>
+    <button onclick="fel()">Females</button>
+    <button onclick="set()">Reset</button>
+    <div id="res"></div>
+    <script>
+        let bod = document.getElementById('res')
+        let ray = [
+            {
+                name: 'Jake',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Josh',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Shaquayquay',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Bajesus',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Markus',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Bingus',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Lorem',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Pueb',
+                grade: '',
+                gender: ''
+            },
+            {
+                name: 'Drake',
+                grade: '',
+                gender: '',
+            },
+            {
+                name: 'Kanye',
+                grade: '',
+                gender: '',
+            }];
+
+        let newarr = []
+
+        const sorted = ray.forEach(re => {
+            newarr.push(re.name)
+            return newarr.sort()
+        })
+
+        console.log(newarr)
+
+        for (i = 0; i < ray.length; i++) {
+            ray[i].grade = Math.round(Math.random() * 3 + 9)
+            let gen = Math.round(Math.random())
+            let ans = null
+            if (gen > 0) {
+                ans = 'Male'
+            } else {
+                ans = 'Female'
+            }
+            ray[i].gender = ans
+            const dis = document.createElement('h1')
+            dis.innerHTML = `Name: ${newarr[i]} <br> Grade: ${ray[i].grade}th <br> Gender: ${ray[i].gender}<br><br> `
+            bod.appendChild(dis)
+        }
+        function mal() {
+            let kraw = ray.filter(chermal)
+            bod.innerHTML = ``
+            for (i = 0; i < kraw.length; i++) {
+                const bis = document.createElement('h1')
+                bis.innerHTML = `Name: ${kraw[i].name} <br> Grade: ${kraw[i].grade}th <br> Gender: ${kraw[i].gender}<br><br> `
+                bod.appendChild(bis)
+            }
+        }
+        function chermal(rage) {
+            if (rage.gender == 'Male') {
+                return rage
+            }
+            console.log('complet')
+        }
+        function fel() {
+            let yraw = ray.filter(thermal)
+            bod.innerHTML = ``
+            for (i = 0; i < yraw.length; i++) {
+                const ais = document.createElement('h1')
+                ais.innerHTML = `Name: ${yraw[i].name} <br> Grade: ${yraw[i].grade}th <br> Gender: ${yraw[i].gender}<br><br> `
+                bod.appendChild(ais)
+            }
+        }
+        function thermal(rage) {
+            if (rage.gender == 'Female') {
+                return rage
+            }
+            console.log('complet')
+        }
+        function sen() { }
+        function set() {
+            bod.innerHTML = ``
+            for (i = 0; i < ray.length; i++) {
+                const dis = document.createElement('h1')
+                dis.innerHTML = `Name: ${newarr[i]} <br> Grade: ${ray[i].grade}th <br> Gender: ${ray[i].gender}<br><br> `
+                bod.appendChild(dis)
+            }
+        }
+    </script>
+</body>
+
+</html>

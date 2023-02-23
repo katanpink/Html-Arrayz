@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex {
+            display: flex;
+
+        }
+
+        .big {
+            flex-grow: 2;
+
+            flex-wrap: wrap;
+
+        }
+
+        .smol {
+            width: 1200px;
+
+            background-color: whitesmoke;
+
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex">
+        <div class="flex big">
+            <div id="item"><img src="./giant-shuttle-flat-off-road-shoe-376282-1.jpg" width="200px" height="200px"
+                    id="shoe"><button onclick="cartit('shoe')">Add to Cart</button></div>
+            <div id="item"><img src="./download (1).jfif" width="200px" height="200px" id="pant"><button
+                    onclick="cartit('pant')">Add to Cart</button></div>
+            <div id="item"><img src="./download.jfif" width="200px" height="200px" id="shirt"><button
+                    onclick="cartit('shirt')">Add to Cart</button></div>
+            <div id="item"><img src="./61j2kJUFq5L._AC_UY575_.jpg" width="200px" height="200px" id="donk"><button
+                    onclick="cartit('donk')">Add to Cart</button></div>
+            <div id="item"><img src="./overhead-2022-05-25T072844.970.webp" width="200px" height="200px"
+                    id="slide"><button onclick="cartit('slide')">Add to Cart</button></div>
+        </div>
+        <div id="cart" class="smol">
+            <h1>CART</h1><button onclick="delt()">Clear</button>
+        </div>
+    </div>
+    <script>var cart = [];
+        function troy(x) {
+            const targ = document.getElementById(x);
+            targ.remove();
+            for (i = 0; i < cart.length; i++) {
+                    console.log('FOUND');
+                cart.splice(i, 1);
+            };
+        };
+        function delt() {
+            cart = [];
+            let mark = document.getElementById('cart');
+            mark.innerHTML = `<h1>CART</h1><button onclick="delt()" >Clear</button>`;
+        };
+        function cartit(x) {
+            let mark = document.getElementById('cart');
+            let pic = document.getElementById(x);
+            let img = pic.src;
+            const it = document.createElement('img');
+            let ic = Math.random() * 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            it.src = img;
+            it.id = ic;
+            it.setAttribute("onClick", 'troy(' + ic + ')');
+            it.style.width = '100px';
+            it.style.height = '100px';
+            mark.appendChild(it);
+            cart.push(it.id);
+            console.log(cart);
+        };
+    </script>
+</body>
+
+</html>
